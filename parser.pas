@@ -283,9 +283,9 @@ begin
   while Displ > 0 do
   begin
     Displ := Displ - TypeLength(LastField^.FieldType);
+    LastField^.FieldDispl := Displ;
+    LastField := LastField^.Previous;
   end;
-  LastField^.FieldDispl := Displ;
-  LastField := LastField^.Previous;
 end;
 
 procedure VariableAddressing(VarLength: integer; LastVar: objPointer);
